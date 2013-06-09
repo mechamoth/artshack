@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>#artshack 101</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.min.css">
+	<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+	<script>
+	document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+	</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Lesson 1<br> Programming &amp; TileMill 101</h1>
+				</section>
+				<section>
+					<h2>What do we mean by "programming"?</h2>
+					<ul>
+						<li class="fragment"><em>Telling a computer what to do</em></li>
+						<li class="fragment">A program is just a text file in a language that a computer understands</li>
+						<li class="fragment">Other programs interpret these files to tell the hardware what to do</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Let's start with HTML</h2>
+						<ol>
+							<li class="fragment">You have some text which has some implicit structure, e.g. headings, paragraphs, lists</li>
+							<li class="fragment">You write an HTML file using a particular syntax</li>
+							<li class="fragment">The HTML adds <em>explicit</em> structure</li>
+							<li class="fragment">Your web browser understands the HTML, and displays your content with the structure you define</li>
+							<li class="fragment">Let's have a look</li>
+						</ol>
+					</section>
+					<section>
+						<h2>Demo: Simple HTML</h2>
+						<ul>
+							<li><a href="example0.html">No markup</a></li>
+							<li><a href="example1.html">Markup, but no style</a></li>
+						</ul>
+					</section>	
+				</section>
+
+				<section>
+					<section>
+						<h2>Making it Shiny</h2>
+						<ol>
+							<li class="fragment">HTML gives <em>structure</em>, but it doesn't dictate what things <em>look</em> like</li>
+							<li class="fragment">Your web browser reads a CSS file to decide how to style things</li>
+							<li class="fragment">CSS lets you style many HTML elements at once using <em>tags</em> &amp; <em>classes</em></li>
+							<li class="fragment">Let's have a look</li>
+						</ol>
+					</section>
+					<section>
+						<h2>Demo: Simple CSS</h2>
+						<ul>
+							<li><a href="example3.html">Styled with CSS</a></li>
+						</ul>
+					</section>	
+				</section>
+
+				<section><h2 id="wrap-up">The Story So Far</h2>
+					<ul>
+						<li>Coding is just writing text in a syntax that another program knows how to understand</li>
+						<li>CSS tells the browser how to display HTML based on tags and classes</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2 id="sec-3">Let's talk about TileMill</h2>
+						<ul>
+							<li class="fragment">TileMill is for making web maps</li>
+							<li class="fragment">It's first &amp; foremost a web tool 
+								<p class="small">(Not really meant for print mapping, though it can be done)</p>
+							</li>
+							<li class="fragment">It uses CartoCSS to style your geodata</li>
+							<li class="fragment">Let's have a look</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Demo: TileMill</h2>
+						<ul>
+							<li>Log in to <a href="http://115.146.84.140/#/project/SimpleDemoMap/">TileMill</a></li>
+							<li class="small">Whirlwind interface tour, basics like how to get to it, what's a project, how do you "save your file", etc.</li>
+							<li class="small">Open the "Simple Demo Map" project</li>
+							<li class="small">Explain what you're looking at, mention most buttons, focus on the Maximize, Layers, Save, and Help</li>
+							<li class="small">Turn the Trainstations, roads &amp; highways off, save project</li>
+							<li class="small">Turn them back on, explain the CartoCSS on the side</li>
+							<li class="small">Point out relevance to Layer names</li>
+							<li class="small">Change size/colour of train stations &amp; highways</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>Exercise</h2>
+					<p>Log in to TileMill &amp; modify an existing map with 3-5 preloaded layers (points, lines &amp; polys). </p>
+					<p>Prize for most beautiful/ugliest map after 30 mins ;)</p>
+				</section>
+
+				<section>
+					<h1>Lesson 2<br> Working with geodata</h1>
+				</section>
+				<section>
+					<section>
+						<h2>What is a map?</h2>
+						<blockquote>A map does not just chart, it unlocks and formulates meaning; it forms bridges between here and there, between disparate ideas that we did not know were previously connected.<p>― Reif Larsen, The Selected Works of T.S. Spivet</p></blockquote>
+					</section>
+					<section>
+						<h2>What is a map?</h2>
+						<ul>
+							<li class="fragment">Maps are not always for navigation.</li></ul>
+							<li class="fragment">At its core, a map is a visualisation of information.</li>
+
+						</section>
+					</section>
+					<section>
+						<section>
+							<h2>What makes a map good?</h2>
+							<blockquote>Map-making had never been a precise art on the Discworld. People tended to start off with good intentions and then get so carried away with the spouting whales, monsters, waves and other twiddly bits of cartographic furniture that the often forgot to put the boring mountains and rivers in at all.
+								<p>― Terry Pratchett, Moving Pictures</p>
+							</blockquote>
+						</section>
+						<section>
+							<h2>What makes a map good?</h2>
+							<ul>
+								<li class="fragment">Figure out what you're saying, and say only that.</li>
+								<li class="fragment">Don't cram everything you think <em>might</em> be relevant or helpful onto the map.</li>
+								<li class="fragment">If you're showing data about provincial dialects, does the viewer need to know about train stations?</li>
+								<li class="fragment">If you're showing data about transport accessibility, does the viewer need province boundaries?</li>
+							</ul>
+						</section>
+					</section>
+					<section>
+						<section>
+							<h2>What does "geodata" mean?</h2>
+							<ul>
+								<li class="fragment">Geodata has <em>coordinates</em>, not just place names</li>
+								<li class="fragment">A spreadsheet with city names, country names, or addresses is <strong>not</strong> geodata (the way we mean it)</li>
+								<li class="fragment">A spreadsheet with latitude &amp; longitude fields is</li>
+							</ul>
+						</section>
+						<section>
+							<h2>What does "geodata" mean?</h2>
+							<ul>
+								<li>There are a few geo-specific file types you will find:</li>
+								<li class="fragment">CSV/XLS: <em>if</em> it has lat/lon fields. Can only contain points.</li>
+								<li class="fragment">Shapefile: Common "standard" for geospatial data. Can be annoying to work with.</li>
+								<li class="fragment">KML/KMZ: Very common for crowdsourced data.</li>
+								<li class="fragment small">There are plenty more (PostGIS, SpatialLite, GeoJSON...) but they're a bit exotic.</li>
+							</ul>
+						</section>
+						<section>
+							<h2>Can we see some?</h2>
+							<p>Sure.</p>
+							<p>Compare the <a href="http://data.gov.au/dataset/martial-arts-in-victoria-gfyl/">Martial Arts Clubs in Victoria</a> dataset to the <a href="http://data.gov.au/dataset/location-of-centrelink-offices/">Location of Centrelink Offices</a> dataset.</p>
+							<ul>
+								<li class="fragment">They're both CSV files...</li>
+								<li class="fragment">They're <strong>not</strong> both geodata!</li>
+							</ul>
+						</section>
+					</section>
+					<section>
+						<section>
+							<h2>Adding data to TileMill</h2>
+							<p>That's all very interesting. I've found some geodata. How do I make a map from it?</p>
+						</section>
+						<section>
+							<h2>Adding data to TileMill</h2>
+							<h3>The Rules</h3>
+							<ol>
+								<li>It must be geodata</li>
+								<li>It must be publicly accessible*<p class="small">*Not technically true</p></li>
+								<li class="fragment">Let's have a look</li>
+							</ol>
+						</section>
+						<section>
+							<h2>Demo: Bootstrapping a TileMill Project</h2>
+							<ul>
+								<li>Log in to <a href="http://115.146.84.140/#/project/SimpleDemoMap/">TileMill</a></li>
+								<li class="small">Start a new project</li>
+								<li class="small">Explain what all this means</li>
+								<li class="small">Open another project containing a layer you want</li>
+								<li class="small">Steal it! Note the source, SQL query if needed, and CartoCSS</li>
+							</ul>
+						</section>						
+						<section>
+							<h2>Demo: Adding your own data to TileMill</h2>
+							<ul>
+								<li>Log in to <a href="http://115.146.84.140/#/project/SimpleDemoMap/">TileMill</a></li>
+								<li class="small">Open the "Simple Demo Map" project</li>
+								<li class="small">Search for some point data on data.gov.au, e.g. <a href="http://data.gov.au/dataset/location-of-centrelink-offices/">Location of Centrelink Offices</a>, and add it to the project. Be sure to mention Layer Name and "Save &amp; Style"</li>
+								<li class="small">Add a <a href="https://www.dropbox.com/home/PrincipalBikeNetwork">data layer</a> via dropbox public link</li>
+							</ul>
+						</section>
+					</section>
+					<section>
+						<h2>Exercise</h2>
+						<p>Find a public geographic dataset (try data.gov.au), add it to your map, and style it how you like.</p>
+					</section>
+				</div>
+
+			</div>
+
+			<script src="lib/js/head.min.js"></script>
+			<script src="js/reveal.min.js"></script>
+
+			<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: false,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+					]
+				});
+
+</script>
+
+</body>
+</html>

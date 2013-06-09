@@ -1,0 +1,119 @@
+* Gentle intro to coding & TileMill
+** What do we mean by "programming"?
+- Telling a computer to do things
+- Just a text file in a special language that a computer understands
+- Syntax
+- Semantics
+- Other programs consume these files to tell the computer what to do
+- Let's start with HTML
+** How HTML works
+- You write a file in a particular syntax
+- The browser understands it and shows it in a certain way
+- HTML adds structure e.g. headings, paragraphs, lists
+- Style tags add looks e.g. font & colour
+- Let's have a look
+- Demo: Simple HTML Page
+  - Look at the page
+  - View Source
+  - Explain elements
+  - Explain style tags
+** How CSS works
+- The style tags are stored in an external file
+- The HTML elements are referenced by names
+- Exactly the same thing is going on, but it allows you to be a bit neater, less confusing, and do fancy selection stuff.
+- Let's see what I mean
+- Demo: Simple CSS
+  - Same HTML page as before, but with ref to a stylesheet
+  - Demo changing the stylesheet & reloading the webpage
+- Wrap-up:
+  - Coding is just writing text in a syntax that another program knows how to understand
+  - CSS tells the browser how to display HTML
+** TileMill
+- Let's talk about TileMill
+- It does the same thing as a browser, but instead of rendering a web page, it renders map tiles
+- It's genuinely a web tool - not really meant for print mapping (though it can be done)
+- Let's have a look
+- Demo:
+  - Log in to TileMill
+  - Whirlwind interface tour, basics like how to get to it, what's a project, how do you "save your file", etc etc
+  - Open the "Simple Demo Map" project
+  - Explain what you're looking at, mention most buttons, focus on the Maximize, Layers, Save, and Help
+  - Turn the Trainstations, roads & highways off, save project
+  - Turn them back on, explain the CartoCSS on the side
+    - Point out relevance to Layer names
+    - Change size/colour of train stations & highways
+- Exercise: Log in to TileMill & modify an existing map with 3-5 preloaded layers (points, lines & polys). Possible prize for most beautiful/ugliest map after 30 mins ;)
+
+* Break
+
+* Elementary cartography & working with the infamous "geodata"
+** What is a map?
+
+“A map does not just chart, it unlocks and formulates meaning; it forms bridges between here and there, between disparate ideas that we did not know were previously connected.” 
+― Reif Larsen, The Selected Works of T.S. Spivet
+
+A map is a visualisation of information. A map serves a purpose. A map is not always used to navigate.
+
+** What makes a map good?
+“Map-making had never been a precise art on the Discworld. People tended to start off with good intentions and then get so carried away with the spouting whales, monsters, waves and other twiddly bits of cartographic furniture that the often forgot to put the boring mountains and rivers in at all.” 
+― Terry Pratchett, Moving Pictures
+
+- Figure out what you're saying, and say only that.
+- Don't cram everything you think might be relevant or helpful onto the screen.
+- If you're making a map of provincial dialects, do you need train stations?
+- If you're making a map of transport accessibility, do you need province boundaries?
+** Data about places ~= geodata
+- Geodata is geospatially referenced, not just geographically referenced
+- You need coordinates!
+- A spreadsheet with province names or addresses isn't geodata the way we mean it
+- If you're dealing with lines or polygons, you're going to need a special file: shapefile, KML/KMZ or GeoJSON
+** Most common geodata issues
+*You will have problems!*
+- Different coordinate systems (lat/lon vs. Web Mercator)
+- Mismatching accuracy levels (city locations from different sources)
+- Mismatching administrative levels (postcodes vs. LGAs vs. states vs....)
+- Spelling, especially for non-English-speaking countries (can mess you up with VLOOKUP tricks)
+** Adding thematic layers to TileMill
+** Simplest example: hosting a CSV on dropbox, adding to TileMill, theming it
+Exercise: add & style an external layer to your TileMill map (from a select set of sources e.g. data.gov.au or naturalearthdata.com)
+
+
+dbname=gis_new host=localhost port=5432 user=ubuntu password=ubuntu
+
+(select * from planet_osm_point where railway = 'station' and name not like 'CBD%') as stations
+
+(select * from planet_osm_line where highway in ('motorway',
+'motorway_link',
+'trunk',
+'trunk_link'
+
+)) as highways
+
+(select * from planet_osm_line where highway in ('primary',
+'primary_link',
+'secondary',
+'secondary_link',
+'tertiary',
+'tertiary_link'
+)) as ways
+
+(select * from planet_osm_line where highway not in ('motorway',
+'motorway_link',
+'trunk',
+'trunk_link',
+'primary',
+'primary_link',
+'secondary',
+'secondary_link',
+'tertiary',
+'tertiary_link'
+)) as ways
+
+(select * from planet_osm_polygon where building is not null) as buildings
+
+(select * from planet_osm_polygon where waterway is not null or "natural"='water') as waterways
+
+(select * from planet_osm_polygon where leisure= 'park') as parks
+
+http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1259030001_lga11aaust_shape.zip&1259.0.30.001&Data%20Cubes&03275B7661181087CA2578CC001223EA&0&July%202011&14.07.2011&Latest
+
