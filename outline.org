@@ -45,14 +45,13 @@
 - Exercise: Log in to TileMill & modify an existing map with 3-5 preloaded layers (points, lines & polys). Possible prize for most beautiful/ugliest map after 30 mins ;)
 
 * Break
-
 * Elementary cartography & working with the infamous "geodata"
 ** What is a map?
 
 “A map does not just chart, it unlocks and formulates meaning; it forms bridges between here and there, between disparate ideas that we did not know were previously connected.” 
 ― Reif Larsen, The Selected Works of T.S. Spivet
 
-A map is a visualisation of information. A map serves a purpose. A map is not always used to navigate.
+A map is a visualisation of information. A map serves a purpose.
 
 ** What makes a map good?
 “Map-making had never been a precise art on the Discworld. People tended to start off with good intentions and then get so carried away with the spouting whales, monsters, waves and other twiddly bits of cartographic furniture that the often forgot to put the boring mountains and rivers in at all.” 
@@ -76,8 +75,7 @@ A map is a visualisation of information. A map serves a purpose. A map is not al
 ** Adding thematic layers to TileMill
 ** Simplest example: hosting a CSV on dropbox, adding to TileMill, theming it
 Exercise: add & style an external layer to your TileMill map (from a select set of sources e.g. data.gov.au or naturalearthdata.com)
-
-
+* Notes: Layer details for OSM PostGIS instance on Nectar server
 dbname=gis_new host=localhost port=5432 user=ubuntu password=ubuntu
 
 (select * from planet_osm_point where railway = 'station' and name not like 'CBD%') as stations

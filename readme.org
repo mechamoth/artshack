@@ -1,0 +1,6 @@
+* ArtsHack TileMill Session Notes
+This repo includes the "lesson plan" (in the loosest sense) and slides for the "Intro to Programming, Geodata, and TileMill" session. 
+* Author
+All content (c) Thom Mackey, 2013.
+* License
+Content in this repo is licensed [[http://creativecommons.org/licenses/by/3.0/au/deed.en_GB][Creative Commons Attribution 3.0 Australia License]] (CC BY 3.0 AU). That means you can take it, copy it, change it, and sell it, as long as you give the original author credit.
