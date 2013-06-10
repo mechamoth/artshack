@@ -2,7 +2,7 @@
 This repo includes the "lesson plan" (in the loosest sense) and slides for the "Intro to Programming, Geodata, and TileMill" session presented at University of Melbourne on June 4th 2013.
 * Slides
 The presentation itself can be accessed through Github Pages here: http://mechamoth.github.io/artshack/
-I'm not certain that I've got it set up properly to automatically update that page if I update the main content, so that might take some fiddling to get working. In the short term, you can just download the zip archive of this repo, and open the "index.html" file in the "presentation" folder on your local computer.
+I'm not certain that I've got it set up properly to automatically update that page if I update the main content, so that might take some fiddling to get working. In the short term, you can just download the zip archive of this repo, and open the "index.html" file in the "presentation" folder on your local computer...
 * Author
 All content (c) Thom Mackey, 2013. Originally produced for the University of Melbourne.
 Presentation uses reveal.js, an MIT-licensed JavaScript library by Hakim El Hattab.
